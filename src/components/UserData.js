@@ -1,4 +1,4 @@
-export default function UserItem({ user }) {
+export default function UserData({ user }) {
     return (
         <div className="userCard cardPosition">
             <div>
