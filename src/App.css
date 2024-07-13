@@ -1,8 +1,7 @@
 /* Main View */
 .container {
-  padding: 10px;
+  padding: 5% 25%;
 }
-
 
 /* Top Bar */
 
@@ -63,6 +62,17 @@ input[type=text] {
   padding-left: 10px;
 }
 
+.list2 {
+  width: 50%;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+input[type=name],[type=phone] {
+  width: 90%;
+  padding: 3px;
+}
 
 /* User Avatar*/
 
@@ -88,26 +98,20 @@ p {
 }
 
 .add {
+  padding-top: 20px;
   margin: auto;
   width: 40%;
 }
 
-input[name=name] {
+input[name=add] {
   width: 100%;
   display: inline-block;
   margin: 4px 0px;
   padding: 12px 0px;
+  padding-left: 10px;
   border-radius: 3px;
   border: 1px solid black;
-}
-
-input[name=phone] {
-  width: 100%;
-  display: inline-block;
-  margin: 4px 0px;
-  padding: 12px 0px;
-  border-radius: 3px;
-  border: 1px solid black;
+  box-sizing: border-box;
 }
 
 .addButton {
@@ -123,4 +127,47 @@ input[name=phone] {
   border-radius: 2px;
   padding: 12px 0px;
   color: white;
+}
+
+.form1 {
+  justify-content: center;
+}
+
+.avatar{
+  display: flex;
+  flex-direction: column;
+}
+
+.foot2 {
+  background-color: #f2f2f2;
+  padding: 10px 15px;
+  border: 1px solid #dee2e6;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.body {
+  background-color: #ffffff;
+  padding: 10px 15px;
+  border: 1px solid #dee2e6;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.input-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.btnAva {
+  background-color: #ad793e;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  margin-right: 8px;
 }
