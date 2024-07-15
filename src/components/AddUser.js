@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export default function AddUser({add}) {
+export default function AddUser({ add }) {
     const navigate = useNavigate()
     const close = () => navigate('/')
 
@@ -11,10 +11,9 @@ export default function AddUser({add}) {
     const submit = (e) => {
         e.preventDefault()
         add(name, phone)
-        setName('')
-        setPhone('')
+        navigate('/')
     }
-    
+
     return (
         <form className="add" onSubmit={submit}>
             <input type="text" placeholder="User Name" name="add" value={name} onChange={(e) => setName(e.target.value)}></input>

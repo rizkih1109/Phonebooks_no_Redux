@@ -3,7 +3,7 @@ import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { Link } from 'react-router-dom';
 
-export default function UserData({ user, remove, edit, avatar }) {
+export default function UserData({ user, remove, edit }) {
 
     const [isEdit, setIsEdit] = useState(false)
     const [recentData, setRecentData] = useState({ id: user.id, name: user.name, phone: user.phone })
@@ -33,13 +33,13 @@ export default function UserData({ user, remove, edit, avatar }) {
         return (
             <div className="userCard cardPosition">
                 <div>
-                    <img src='../pictures/Defaultavatar.png' alt='no source'></img>
+                    <img src={user.avatar == null ? '../pictures/Defaultavatar.png' : `http://localhost:3000/images/${user.avatar}`} alt='no source'></img>
                 </div>
                 <div className="list2">
-                    <p><input type='name' value={recentData.name} onChange={(e) => setRecentData({ ...recentData, name: e.target.value })}></input></p>
-                    <p><input type='phone' value={recentData.phone} onChange={(e) => setRecentData({ ...recentData, phone: e.target.value })}></input></p>
+                    <p><input id='name' value={user.name} onChange={(e) => setRecentData({ ...recentData, name: e.target.value })}></input></p>
+                    <p><input id='phone' value={user.phone} onChange={(e) => setRecentData({ ...recentData, phone: e.target.value })}></input></p>
                     <div className="btn3">
-                        <i class="fa-solid fa-floppy-disk" onClick={saveUser}></i>
+                        <i className="fa-solid fa-floppy-disk" onClick={saveUser}></i>
                     </div>
                 </div>
             </div>
@@ -47,8 +47,8 @@ export default function UserData({ user, remove, edit, avatar }) {
     } else {
         return (
             <div className="userCard cardPosition">
-                <Link to='/avatar' state={user}>
-                    <img src='../pictures/Defaultavatar.png' alt='no source'></img>
+                <Link to='/avatar' state={user} >
+                    <img src={user.avatar == null ? '../pictures/Defaultavatar.png' : `http://localhost:3000/images/${user.avatar}`} alt='no source'></img>
                 </Link>
                 <div className="list">
                     <p>{user.name}</p>
