@@ -15,7 +15,6 @@ export default function Avatar({ avatar }) {
         const formData = new FormData()
         formData.append('avatar', image)
         avatar(state.id, formData)
-        console.log(formData)
         navigate('/')
     }
 

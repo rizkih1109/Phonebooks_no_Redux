@@ -8,7 +8,7 @@ export default function UserData({ user, remove, edit }) {
     const [isEdit, setIsEdit] = useState(false)
     const [recentData, setRecentData] = useState({ id: user.id, name: user.name, phone: user.phone })
 
-    const saveUser = () => {
+    const saveUser = (e) => {
         edit(recentData.id, recentData.name, recentData.phone)
         setIsEdit(false)
     }
@@ -36,8 +36,8 @@ export default function UserData({ user, remove, edit }) {
                     <img src={user.avatar == null ? '../pictures/Defaultavatar.png' : `http://localhost:3000/images/${user.avatar}`} alt='no source'></img>
                 </div>
                 <div className="list2">
-                    <p><input id='name' value={user.name} onChange={(e) => setRecentData({ ...recentData, name: e.target.value })}></input></p>
-                    <p><input id='phone' value={user.phone} onChange={(e) => setRecentData({ ...recentData, phone: e.target.value })}></input></p>
+                    <p><input id='name' value={recentData.name} onChange={(e) => setRecentData({ ...recentData, name: e.target.value })}></input></p>
+                    <p><input id='phone' value={recentData.phone} onChange={(e) => setRecentData({ ...recentData, phone: e.target.value })}></input></p>
                     <div className="btn3">
                         <i className="fa-solid fa-floppy-disk" onClick={saveUser}></i>
                     </div>
